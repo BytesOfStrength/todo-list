@@ -1,16 +1,30 @@
-# React + Vite
+# Todo-list App
+Description: This App is to create a Todo-list for weekly assignments. It is a single page application that is built using React and Vite. This application is used to develop lists. 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Installation and Setup of Project: 
 
-Currently, two official plugins are available:
+1. Clone the repository using : ```git clone git@github.com:BytesOfStrength/todo-list.git```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+2. Go to Cloned Project Directory on your local machine: 
 
-## React Compiler
+   `cd todo-list`
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+3. Use React Template in your current project directory:
+   `npm create vite@latest . -- --template react`
 
-## Expanding the ESLint configuration
+4. Install dependencies: 
+   `npm install`
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+5. (optional)
+   While optional, I used both ESLint and Prettier Configurations to write the code. 
+   For EsLint Extension to use with React Project: In the terminal of your project directory (todo list) type: 
+
+`npm install eslint-plugin-react --save-dev`
+
+For Prettier Extension to use with React Project: In the terminal of your project directory (todo-list) type:
+
+`npm install --save-dev --save-exact prettier`
+
+## How to Run the Developmental Server
+   In your folder for your React project's terminal command line type: 
+   `npm run dev`
