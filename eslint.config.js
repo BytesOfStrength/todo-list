@@ -29,12 +29,10 @@ export default defineConfig([
       }
     },
     plugins: {
-      react,
-      'react-hooks': reactHooks
+      react
     },
 
     rules: {
-      ...js.configs.recommended.rules,
       ...react.configs.recommended.rules,
       ...react.configs['jsx-runtime'].rules,
       'no-unused-vars': ['warn', { varsIgnorePattern: '^[A-Z_]' }],
