@@ -5,13 +5,13 @@ import TodoForm from './TodoForm.jsx';
 
 function App() {
   const [todoList, setTodoList] = useState([]);
-  function addTodo(title) {
+  const addTodo = (title) => {
     const newTodo = {
-      title: title,
+      title,
       id: Date.now(),
     };
     setTodoList([...todoList, newTodo]);
-  }
+  };
   return (
     <div>
       <h1>My Todos</h1>
