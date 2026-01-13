@@ -11,6 +11,7 @@ function App() {
   const [todoList, setTodoList] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const [isSaving, setIsSaving] = useState(false);
 
   useEffect(() => {
     const fetchTodos = async () => {
@@ -52,14 +53,55 @@ function App() {
     fetchTodos();
   }, []);
 
-  const addTodo = (title) => {
-    const newTodo = {
-      title,
-      id: Date.now(),
-      isCompleted: false,
+  const addTodo = async(newTodo) => {
+    //create payload that is sent to AirTable
+    const payload = {
+      records: [
+        {
+          fields: {
+            title: newTodo.title,
+            isCompleted: newTodo.isCompleted,
+          },
+        },
+      ],
     };
-    setTodoList([...todoList, newTodo]);
+    // second set options object but this time for POST
+    const options = {
+      method: 'POST',
+      headers: {
+        Authorization: token,
+        'Content-type': 'application/json',
+      },
+       body: JSON.stringify(payload),
+    };
+    //try/catch/finally
+
+    try {
+      setIsSaving(true);
+      const resp = await fetch(url, options);
+      if (!resp.ok) {
+        throw new Error(
+          `Error adding new todo: ${resp.status} ${resp.statusText}`
+        );
+      }
+
+      const { records } = await resp.json();
+      const savedTodo = {
+        id: records[0].id,
+        ...records[0].fields,
+      };
+      if (!records[0].fields.isCompleted) {
+        savedTodo.isCompleted = false;
+      }
+      setTodoList([...todoList, savedTodo]);
+    } catch (error) {
+      console.log(error.message);
+      setErrorMessage(error.message);
+    } finally {
+      setIsSaving(false);
+    }
   };
+
   const updateTodo = (editedTodo) => {
     const updatedTodos = todoList.map((todo) => {
       if (todo.id === editedTodo.id) {
@@ -83,7 +125,7 @@ function App() {
   return (
     <div>
       <h1>My Todos</h1>
-      <TodoForm onAddTodo={addTodo} />
+      <TodoForm onAddTodo={addTodo} isSaving={isSaving} />
 
       <TodoList
         todoList={todoList}
