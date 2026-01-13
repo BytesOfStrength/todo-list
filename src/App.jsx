@@ -138,7 +138,7 @@ function App() {
       const resp = await fetch(url, options);
       if (!resp.ok) {
         throw new Error(
-          `Error adding new todo: ${resp.status} ${resp.statusText}`
+          `Error updating new todo: ${resp.status} ${resp.statusText}`
         );
       }
     } catch (error) {
