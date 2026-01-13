@@ -6,7 +6,7 @@ function TodoForm({ onAddTodo, isSaving }) {
   const handleAddTodo = (event) => {
     event.preventDefault();
     //pass state variable to parent function
-    onAddTodo(workingTodoTitle);
+    onAddTodo({ title: workingTodoTitle, isCompleted: false });
     setWorkingTodoTitle('');
     todoTitleInput.current.focus();
   };
@@ -19,9 +19,12 @@ function TodoForm({ onAddTodo, isSaving }) {
         elementId="todoTitle"
         labelText="Todo"
       />
-      <button type="submit" disabled={isSaving || workingTodoTitle.trim() === ''}>
+      <button
+        type="submit"
+        disabled={isSaving || workingTodoTitle.trim() === ''}
+      >
         {''}
-        {isSaving ? 'Saving...':'Add Todo'}
+        {isSaving ? 'Saving...' : 'Add Todo'}
       </button>
     </form>
   );
