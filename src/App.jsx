@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import TodoList from './features/TodoList/TodoList.jsx';
 import TodoForm from './features/TodoForm.jsx';
+import TodosViewForm from './features/TodosViewForm.jsx';
 
 const url = `https://api.airtable.com/v0/${import.meta.env.VITE_BASE_ID}/${import.meta.env.VITE_TABLE_NAME}`;
 const token = `Bearer ${import.meta.env.VITE_PAT}`;
@@ -229,9 +230,20 @@ function App() {
         onUpdateTodo={updateTodo}
         isLoading={isLoading}
       />
+
+      <hr />
+
+      <TodosViewForm
+        sortDirection={sortDirection}
+        setSortDirection={setSortDirection}
+        sortField={sortField}
+        setSortField={setSortField}
+      />
+
+      <hr />
+
       {errorMessage && (
         <div>
-          <hr />
           <p>{errorMessage}</p>
           <button type="button" onClick={() => setErrorMessage('')}>
             Dismiss
