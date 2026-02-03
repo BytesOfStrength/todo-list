@@ -1,0 +1,59 @@
+.listItem {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  padding: 0.9rem 0.75rem;
+  border-bottom: 0.0625rem solid var(--border);
+  width: 100%;
+}
+.listItem:hover {
+  background-color: var(--bg-app);
+}
+
+.listItem:last-child {
+  border-bottom: none;
+}
+.editItemForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.cancelButton {
+  background-color: #d6686e;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  /*margin: 0;*/
+  flex-shrink: 0;
+}
+
+.checkboxLabel input {
+  width: auto;
+  cursor: pointer;
+}
+.todoTitle {
+  cursor: pointer;
+  flex-grow: 1;
+  text-align: left;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--text-main);
+  padding: 0.5rem 0;
+  word-break: break-word;
+}
+.todoTitle:hover {
+  color: var(--primary);
+}
+
+@media (min-width: 30rem) {
+  .editItemForm {
+    flex-direction: row;
+    align-items: center;
+  }
+}
