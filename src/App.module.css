@@ -1,0 +1,47 @@
+.container {
+  background-color: var(--bg-card);
+  border: 0.0625rem solid var(--border);
+  border-radius: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  max-width: 30rem;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  box-shadow: 0 0.625rem 1.5625rem -0.3125rem rgba(157, 92, 99, 0.1);
+}
+
+.errorContainer {
+  border: 0.125rem solid #be123c;
+  border-radius: 0.5rem;
+  background-color: #fff1f2;
+  color: #9f1239;
+  padding: 1rem;
+  margin: 1rem 0;
+  max-width: 25rem;
+  text-align: center;
+  width: 100%;
+}
+.errorContainer p {
+  color: #9f1239;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.listContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.listContainer ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  max-width: 28rem;
+  margin: 0;
+}
