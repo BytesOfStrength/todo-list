@@ -1,6 +1,6 @@
-//week 09 Airtable credential setup
 import { useState, useEffect, useCallback } from 'react';
 import './App.css';
+import styles from './App.module.css';
 import TodoList from './features/TodoList/TodoList.jsx';
 import TodoForm from './features/TodoForm.jsx';
 import TodosViewForm from './features/TodosViewForm.jsx';
@@ -214,16 +214,17 @@ function App() {
     }
   };
   return (
-    <div>
+    <div className={styles.container}>
       <h1>My Todos</h1>
       <TodoForm onAddTodo={addTodo} isSaving={isSaving} />
-
-      <TodoList
-        todoList={todoList}
-        onCompleteTodo={completeTodo}
-        onUpdateTodo={updateTodo}
-        isLoading={isLoading}
-      />
+      <div className={styles.listContainer}>
+        <TodoList
+          todoList={todoList}
+          onCompleteTodo={completeTodo}
+          onUpdateTodo={updateTodo}
+          isLoading={isLoading}
+        />
+      </div>
 
       <hr />
 
@@ -239,7 +240,7 @@ function App() {
       <hr />
 
       {errorMessage && (
-        <div>
+        <div className={styles.errorContainer}>
           <p>{errorMessage}</p>
           <button type="button" onClick={() => setErrorMessage('')}>
             Dismiss
