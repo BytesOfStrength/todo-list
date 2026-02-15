@@ -32,7 +32,7 @@ const StyledButton = styled.button`
 
   &:disabled {
     font-style: italic;
-    color: #736767;
+    color: rgb(94, 92, 92);
     background-color: var(--border);
     cursor: not-allowed;
   }

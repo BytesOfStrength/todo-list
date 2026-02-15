@@ -1,0 +1,28 @@
+.active {
+  /*color: #557fe0;*/
+  color: #736767;
+}
+
+.inactive {
+  /*color: #0f172a;*/
+  color: var(--text-main);
+}
+.header {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  padding: 3rem 0 1rem 0;
+}
+.nav {
+  display: flex;
+  gap: 1.5rem;
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+}
+
+h1 {
+  margin: 0 auto;
+  font-size: 2.5rem;
+  max-width: 75%;
+}
