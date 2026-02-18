@@ -99,7 +99,9 @@ button {
 }
 
 button:disabled {
-  background-color: var(--border);
+  background-color: var(--text-muted);
+  /*background-color: var(--border);*/
   font-style: italic;
   cursor: not-allowed;
+  color: rgb(94, 92, 92);
 }

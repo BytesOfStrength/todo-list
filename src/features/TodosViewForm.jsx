@@ -36,10 +36,9 @@ const StyledClearButton = styled.button`
   }
   &:disabled {
     background-color: var(--border);
-    color: var(--text-muted);
+    color: rgb(94, 92, 92);
     font-style: italic;
     cursor: not-allowed;
-    opacity: 0.7;
   }
   &:focus {
     outline: 0.1875rem solid var(--focus-ring);
